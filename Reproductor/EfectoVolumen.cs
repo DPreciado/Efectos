@@ -16,10 +16,10 @@ namespace Reproductor
         public EfectoVolumen(ISampleProvider fuente)
         {
             this.fuente = fuente;
-            volumen = 1.0f;
+            volumen = 0.2f;
         }
 
-        public float volumen
+        public float Volumen
         {
             get
             {
@@ -41,8 +41,8 @@ namespace Reproductor
                 }
             }
         }
-
-        public WaveFormat Waveformt
+        
+        public WaveFormat WaveFormat
         {
             get
             {
@@ -57,7 +57,7 @@ namespace Reproductor
             //Aplicar el efecto
             for (int i = 0; i < read; i++)
             {
-                buffer[i + ofset] *= volumen;
+                buffer[i + offset] *= volumen;
             }
 
             return read;
