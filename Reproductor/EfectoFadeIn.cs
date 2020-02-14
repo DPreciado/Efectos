@@ -33,7 +33,6 @@ namespace Reproductor
         {
             int read = fuente.Read(buffer, offset, count);
 
-            //Aplicar el efecto
             muestrasLeidas += read;
             segundosTranscurridos = (float)(muestrasLeidas) / (float)(fuente.WaveFormat.SampleRate) / (float)(fuente.WaveFormat.Channels);
             

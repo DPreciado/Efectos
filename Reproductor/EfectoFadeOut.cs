@@ -33,16 +33,16 @@ namespace Reproductor
 
         public int Read(float[] buffer, int offset, int count)
         {
-            int read = fuente.Read(buffer, offset, count) * (-1);
+            int read = fuente.Read(buffer, offset, count);
 
             muestrasLeidas += read;
             segundosTranscurridos = (float)(muestrasLeidas) / (float)(fuente.WaveFormat.SampleRate) / (float)(fuente.WaveFormat.Channels);
 
-            if (segundosTranscurridos <= duracion)
+            if (segundosTranscurridos >= inicio)
             {
                 //Aplicar el efecto
                 float factorEscala = segundosTranscurridos / duracion;
-                for (int i = 0; i > read; i--)
+                for (int i = 0; i < read; i++)
                 {
                     buffer[i + offset] *= factorEscala;
                 }
