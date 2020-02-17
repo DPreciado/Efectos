@@ -38,22 +38,27 @@ namespace Reproductor
             muestrasLeidas += read;
             segundosTranscurridos = (float)(muestrasLeidas) / (float)(fuente.WaveFormat.SampleRate) / (float)(fuente.WaveFormat.Channels);
 
-            if (segundosTranscurridos >= inicio)
+            if (segundosTranscurridos > inicio)
             {
                 //Aplicar el efecto
-                float factorEscala = 1 - ((segundosTranscurridos - inicio) / duracion);
-                for (int i = 0; i < read; i++)
+                float factorEscala = 1 - (segundosTranscurridos - inicio) / (duracion);
+                
+                if (segundosTranscurridos >= (inicio + duracion))
                 {
-                    buffer[i + offset] *= factorEscala;
+                    for (int i = 0; i < read; i++)
+                    {
+                        buffer[i + offset] = 0;
+                    }
+                }
+                else
+                {
+                    for (int i = 0; i < read; i++)
+                    {
+                        buffer[i + offset] *= factorEscala;
+                    }
                 }
             }
-            if (segundosTranscurridos >= (inicio + duracion))
-            {
-                for (int i = 0; i < read; i++)
-                {
-                    buffer[i + offset] = 0;
-                }
-            }
+            
 
             return read;
         }

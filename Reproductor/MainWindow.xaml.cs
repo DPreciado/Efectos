@@ -123,7 +123,7 @@ namespace Reproductor
                     float inicio = float.Parse(txtInicio.Text);
                     efectoFadeOut = new EfectoFadeOut(reader, duracionFadeOut, inicio);
 
-                    efectoVolumen = new EfectoVolumen(efectoFadeIn);
+                    efectoVolumen = new EfectoVolumen(efectoFadeOut);
                     efectoVolumen.Volumen = (float)(sldVolumen.Value);
 
                     output = new WaveOut();
