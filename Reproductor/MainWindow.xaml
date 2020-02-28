@@ -5,22 +5,22 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Reproductor"
         mc:Ignorable="d"
-        Title="MainWindow" Height="296.169" Width="505.335">
+        Title="MainWindow" Height="336.044" Width="505.335">
     <Grid>
         <TextBox x:Name="txtRutaArchivo" HorizontalAlignment="Left" Height="23" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="300"/>
         <Button x:Name="btnExaminar" Content="Examinar" HorizontalAlignment="Left" Margin="328,13,0,0" VerticalAlignment="Top" Width="75" Click="BtnExaminar_Click"/>
         <Button x:Name="btnReproducir" Content="Reproducir" HorizontalAlignment="Left" Margin="10,93,0,0" VerticalAlignment="Top" Width="75" Click="BtnReproducir_Click"/>
         <Button x:Name="btnPausa" Content="Pausa" HorizontalAlignment="Left" Margin="124,93,0,0" VerticalAlignment="Top" Width="75" Click="BtnPausa_Click"/>
         <Button x:Name="btnDetener" Content="Detener" HorizontalAlignment="Left" Margin="235,93,0,0" VerticalAlignment="Top" Width="75" Click="BtnDetener_Click"/>
-        <TextBlock x:Name="lblTiempoActual" HorizontalAlignment="Left" Margin="10,124,0,0" TextWrapping="Wrap" Text="00:00:00" VerticalAlignment="Top"/>
-        <TextBlock x:Name="lblTiempoTotal" HorizontalAlignment="Left" Margin="354,127,0,0" TextWrapping="Wrap" Text="00:00:00" VerticalAlignment="Top"/>
-        <Slider x:Name="sldTiempo" HorizontalAlignment="Left" Margin="10,148,0,0" VerticalAlignment="Top" Width="393" Maximum="100"
+        <TextBlock x:Name="lblTiempoActual" HorizontalAlignment="Left" Margin="10,191,0,0" TextWrapping="Wrap" Text="00:00:00" VerticalAlignment="Top"/>
+        <TextBlock x:Name="lblTiempoTotal" HorizontalAlignment="Left" Margin="354,194,0,0" TextWrapping="Wrap" Text="00:00:00" VerticalAlignment="Top"/>
+        <Slider x:Name="sldTiempo" HorizontalAlignment="Left" Margin="10,215,0,0" VerticalAlignment="Top" Width="393" Maximum="100"
                 Thumb.DragStarted="SldTiempo_DragStarted"
                 Thumb.DragCompleted="SldTiempo_DragCompleted"/>
-        <TextBlock HorizontalAlignment="Left" Margin="10,171,0,0" TextWrapping="Wrap" Text="Elige dispositivo de salida:" VerticalAlignment="Top"/>
-        <ComboBox x:Name="cbDispositivoSalida" HorizontalAlignment="Left" Margin="10,192,0,0" VerticalAlignment="Top" Width="388"/>
-        <Slider x:Name="sldVolumen" HorizontalAlignment="Left" Margin="448,113,0,0" VerticalAlignment="Top" Width="22" Orientation="Vertical" Height="101" LargeChange="0.1" SmallChange="0.01" Maximum="1" ValueChanged="SldVolumen_ValueChanged" Value="1"/>
-        <TextBlock HorizontalAlignment="Left" Margin="435,93,0,0" TextWrapping="Wrap" Text="Volumen" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="10,238,0,0" TextWrapping="Wrap" Text="Elige dispositivo de salida:" VerticalAlignment="Top"/>
+        <ComboBox x:Name="cbDispositivoSalida" HorizontalAlignment="Left" Margin="10,259,0,0" VerticalAlignment="Top" Width="388"/>
+        <Slider x:Name="sldVolumen" HorizontalAlignment="Left" Margin="448,29,0,0" VerticalAlignment="Top" Width="22" Orientation="Vertical" Height="101" LargeChange="0.1" SmallChange="0.01" Maximum="1" ValueChanged="SldVolumen_ValueChanged" Value="1"/>
+        <TextBlock HorizontalAlignment="Left" Margin="435,9,0,0" TextWrapping="Wrap" Text="Volumen" VerticalAlignment="Top"/>
         <TextBox x:Name="txtDuracion" HorizontalAlignment="Left" Height="23" Margin="67,58,0,0" TextWrapping="Wrap" Text="1" VerticalAlignment="Top" Width="44"/>
         <TextBlock HorizontalAlignment="Left" Margin="10,38,0,0" TextWrapping="Wrap" Text="Fade in:" VerticalAlignment="Top"/>
         <TextBlock HorizontalAlignment="Left" Margin="10,59,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="52"><Run Text="Duracion"/><Run Text=":"/></TextBlock>
@@ -29,6 +29,11 @@
         <TextBlock HorizontalAlignment="Left" Margin="158,59,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="52" Text="Inicio:"/>
         <TextBox x:Name="txtDuracionFadeOut" HorizontalAlignment="Left" Height="23" Margin="335,58,0,0" TextWrapping="Wrap" Text="1" VerticalAlignment="Top" Width="44"/>
         <TextBlock HorizontalAlignment="Left" Margin="278,59,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="52"><Run Text="Duracion"/><Run Text=":"/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Margin="10,125,0,0" TextWrapping="Wrap" Text="Delay" VerticalAlignment="Top"/>
+        <TextBlock x:Name="lblOffsetDelay" HorizontalAlignment="Left" Margin="81,162,0,0" TextWrapping="Wrap" Text="1500" VerticalAlignment="Top" FontSize="10"/>
+        <Slider x:Name="sldOffsetDelay" HorizontalAlignment="Left" Margin="10,146,0,0" VerticalAlignment="Top" Width="101" ValueChanged="Slider_ValueChanged" Maximum="10000" Value="1500"/>
+        <TextBlock HorizontalAlignment="Left" Margin="79,134,0,0" TextWrapping="Wrap" Text="Offset" VerticalAlignment="Top" Width="32" FontSize="9"/>
+        
 
     </Grid>
 </Window>
