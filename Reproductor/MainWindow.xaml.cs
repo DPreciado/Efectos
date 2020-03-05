@@ -116,7 +116,7 @@ namespace Reproductor
                     /*volume = new VolumeSampleProvider(reader);
                     volume.Volume = (float)(sldVolumen.Value);*/
 
-                    efectoDelay = new EfectoDelay(reader, (int)(sldOffsetDelay.Value));
+                    efectoDelay = new EfectoDelay(reader, (int)(sldOffsetDelay.Value), (float)(sldGananciaDelay.Value));
 
                     efectoFadeIn = new EfectoFadeIn(efectoDelay, float.Parse(txtDuracion.Text));
 
@@ -218,6 +218,10 @@ namespace Reproductor
             if(lblGananciaDelay != null)
             {
                 lblGananciaDelay.Text = sldGananciaDelay.Value.ToString("n");
+                if(efectoDelay != null)
+                {
+                    efectoDelay.Ganancia = (float)(sldGananciaDelay.Value);
+                }
             }
         }
     }
